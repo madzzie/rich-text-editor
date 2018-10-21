@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import {Editor} from 'slate-react'
 import {Value} from 'slate'
-import {BoldMark, ItalicMark} from './index'
+
+import Icon from "react-icons-kit"
+import {bold} from "react-icons-kit/feather/bold"
+import {italic} from "react-icons-kit/feather/italic"
+
+import {BoldMark, ItalicMark, FormatToolbar} from './index'
 
 const initialValue = Value.fromJSON({
     document: {
