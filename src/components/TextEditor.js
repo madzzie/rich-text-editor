@@ -69,15 +69,25 @@ export default class TextEditor extends Component {
         }
     };
 
+    onMarkClick = (e, change, type) => {
+        e.preventDefault();
+
+        change.toggleMark(type);
+    };
+
     render() {
         return (
             <Fragment>
                 <FormatToolbar>
-                    <button className="tooltip-icon-button">
-                        <Icon icon={bold} />
+                    <button
+                        onPointerDown={(e) => this.onMarkClick(e, 'bold')}
+                        className="tooltip-icon-button">
+                        <Icon icon={bold}/>
                     </button>
-                    <button className="tooltip-icon-button">
-                        <Icon icon={italic} />
+                    <button
+                        onPointerDown={(e) => this.onMarkClick(e, 'italic')}
+                        className="tooltip-icon-button">
+                        <Icon icon={italic}/>
                     </button>
                 </FormatToolbar>
                 <Editor
